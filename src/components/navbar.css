@@ -29,9 +29,37 @@ a{
     font-weight: bold;
 
 }
-.nav_menu{
+/* .nav_menu{
     display: flex;
     align-items: center;
     justify-content: space-around;
     gap: 3rem;
+}
+
+.nav_menu {
+    display: block;
+} */
+
+.nav_menu {
+    display: none;
+}
+
+/* Estilos para mostrar o menu dropdown em telas menores */
+@media (max-width: 768px) {
+    .nav_menu {
+        display: block;
+    }
+
+    .nav_item.dropdown > .nav_link::after {
+        content: '\25BE'; /* Símbolo de seta para baixo para indicar dropdown */
+        margin-left: 5px;
+    }
+
+    .dropdown_menu {
+        display: none;
+    }
+
+    .nav_item.dropdown:hover .dropdown_menu {
+        display: block;
+    }
 }
